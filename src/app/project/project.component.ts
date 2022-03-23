@@ -16,10 +16,11 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.refreshProjectList();
   }
+  displayStyle = "none";
 
   OnSubmit(){
     this.service.postStartProject();
-    this.refreshProjectList();
+    window.location.reload();
     
   }
 
@@ -32,11 +33,14 @@ export class ProjectComponent implements OnInit {
 
   nameProject(selectedProject:Project){
     this.service.formData=selectedProject;
+    this.displayStyle = "block";
 
   }
 
   putProject(){
     this.service.putEndProject();
+    this.displayStyle = "none";
+    window.location.reload();
   }
 
 
