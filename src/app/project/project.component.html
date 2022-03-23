@@ -1,0 +1,38 @@
+
+<div class="container">
+    <button class="btn btn-info" type="button" (click)="OnSubmit()">Start project</button>
+</div>  
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ProjectName</th>
+            <th>Start Time</th>
+            <th>End time</th>
+            <th>Duration</th>
+            <th>Stop Project</th>
+        </tr>
+        <tr *ngFor="let dataItem of ProjectList">
+            <td>{{dataItem.projectName}}</td>
+            <td>{{dataItem.startTime}}</td>
+            <td>{{dataItem.endTime}}</td>
+            <td>{{dataItem.duration}} Hours</td>
+            <td>
+                <button type="button" class="btn btn-danger"(click)="nameProject(dataItem)" *ngIf="dataItem.endTime ==null;"> Stop</button>
+            </td>
+        </tr>
+    </thead>
+</table>
+
+<form>
+    <input type="hidden" name="paymentDetailId" [value]="service.formData.projectId" />
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Project Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="projectName" #projectName="ngModel" [(ngModel)]="service.formData.projectName">
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="putProject()">Submit</button>
+
+</form>
+
