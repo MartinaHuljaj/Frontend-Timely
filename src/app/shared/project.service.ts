@@ -20,13 +20,15 @@ export class ProjectService {
   }
 
   postStartProject(){
-    console.log(this.formData);
     return this.http.post(this.baseUrl,this.formData).subscribe();
   }
 
   putEndProject(){
-    console.log(this.formData);
     return this.http.put(`${this.baseUrl}?projectId=${this.formData.projectId}`,this.formData).subscribe();
+  }
+
+  deleteProject(){
+    return this.http.delete(`${this.baseUrl}/${this.formData.projectId}`).subscribe();
   }
 
 

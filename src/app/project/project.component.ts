@@ -43,5 +43,11 @@ export class ProjectComponent implements OnInit {
     window.location.reload();
   }
 
+  deleteProject(selectedProject:Project){
+    this.service.formData=selectedProject;
+    this.service.deleteProject();
+    window.location.reload();
+  }
+
 
 }

@@ -21,6 +21,9 @@
             <td>
                 <button type="button" class="btn btn-danger"(click)="nameProject(dataItem)" *ngIf="dataItem.endTime ==null;"> Stop</button>
             </td>
+            <td>
+              <button type="button" class="btn btn-danger"(click)="deleteProject(dataItem)"> Delete project</button>
+          </td>
         </tr>
     </thead>
 </table>
