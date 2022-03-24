@@ -11,7 +11,8 @@
             <th>Start Time</th>
             <th>End time</th>
             <th>Duration</th>
-            <th>Stop Project</th>
+            <th>Stop/Edit</th>
+            <th>Delete</th>
         </tr>
         <tr *ngFor="let dataItem of ProjectList">
             <td>{{dataItem.projectName}}</td>
@@ -19,10 +20,15 @@
             <td>{{dataItem.endTime}}</td>
             <td>{{dataItem.duration}} Hours</td>
             <td>
-                <button type="button" class="btn btn-danger"(click)="nameProject(dataItem)" *ngIf="dataItem.endTime ==null;"> Stop</button>
+                <button type="button" class="btn btn-danger"(click)="nameProject(dataItem)" *ngIf="dataItem.endTime==null;"> Stop</button>
+                <button type="button" class="btn btn-warning"(click)="nameProject(dataItem)" *ngIf="dataItem.endTime!=null;" >
+                  <span class="fa-solid fa-pen"></span>
+                </button>
             </td>
             <td>
-              <button type="button" class="btn btn-danger"(click)="deleteProject(dataItem)"> Delete project</button>
+              <button type="button" class="btn btn-danger"(click)="deleteProject(dataItem)">
+                <span class="fa-solid fa-trash-can"></span>
+              </button>
           </td>
         </tr>
     </thead>
