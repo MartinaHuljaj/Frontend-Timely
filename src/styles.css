@@ -2,8 +2,11 @@
 .buttoncontainer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-bottom: 50px;
+}
+.btn{
+    color:white;
 }
 .firstcontainer{
     display: flex;
